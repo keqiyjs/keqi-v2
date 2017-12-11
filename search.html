@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="科气研究所，中国科学技术大学，中科大，现代软件工程">
+    <meta name="description" content="Page prototype v1.1" />
+    <meta name="author" content="USTC Modern Software Engineering KLKQYFCT">
+    <title>可期</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- 注意顺序 先引用jquery再引用bootstrap -->
+    <style>
+
+    </style>
+    </head>
+    <body>
+      <!-- 导航栏 -->
+      <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <div class="navbar-brand">可期</div>
+              </div>
+              <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                  <li class="active"><a href="mainpage.html">首页</a></li>
+                  <li><a href="aboutUs.html">关于</a></li>
+                  <li><a href="contactUs.html">联系我们</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                  <li><img src="pics/profile.jpg" alt="profile" class="navbar-brand"></li>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">我的 <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li class="text-center"><a href="#">发布新的自习</a></li>
+                      <li class="text-center"><a href="#">正进行的自习</a></li>
+                      <li class="text-center"><a href="#">我的所有自习</a></li>
+                      <li role="separator" class="divider"></li>
+                      <li class="text-center"><a href="#"><span class="glyphicon glyphicon-home pull-left"></span>我的主页</a></li>
+                      <li class="text-center"><a href="#"><span class="glyphicon glyphicon-cog pull-left"></span>个人设置</a></li>
+                      <li class="text-center"><a href="#"><span class="glyphicon glyphicon-off pull-left">&nbsp;&nbsp;注销</span></a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div><!--/.nav-collapse -->
+            </div>
+      </nav>
+
+      <br><br><br><br><br>
+      <!-- 网页内容 -->
+      <div class="container">
+            <form class="form-horizontal" role="form">
+              <fieldset>
+              <div id="legend" class="">
+                <legend class="text-center">搜索自习</legend>
+              </div>
+                      <div class="form-group">
+                          <!-- Select Basic -->
+                          <label class="control-label col-md-5 ">年级</label>
+                          <div class="col-md-2">
+                            <select name="grade" id="grade"class="form-control">
+                      <option value="0">任意</option>
+                      <option value="1">大一</option>
+                      <option value="2">大二</option>
+                      <option value="3">大三</option>
+                      <option value="4">大四</option></select>
+                          </div>
+                        </div>
+                
+                    <div class="form-group">
+                
+                          <!-- Select Basic -->
+                          <label class="control-label col-md-5 ">院系</label>
+                          <div class="col-md-3">
+                            <select name="department" id="department" class="form-control">
+                      <option value="0">任意</option>
+                      <option value="1">物理学院</option>
+                      <option value="2">化学与材料科学学院</option>
+                      <option value="3">少年班学院</option>
+                      <option value="4">管理学院</option>
+                      <option value="5">地球和空间科学学院</option>
+                      <option value="6">人文与社会科学学院</option>
+                      <option value="7">计算机科学与技术学院</option>
+                      <option value="8">信息科学技术学院</option>
+                      <option value="9">工程科学学院</option>
+                      <option value="10">数学科学学院</option>
+                      <option value="11">生命科学学院</option>
+                      <option value="12">公共事务学院</option>
+                      <option value="13">核科学技术学院</option></select>
+                         </div>
+                        </div>
+                
+                    <div class="form-group">
+                
+                          <!-- Select Basic -->
+                          <label class="control-label col-md-5 ">地点</label>
+                          <div class="col-md-2">
+                            <select name="location" id="location" class="form-control">
+                      <option value="0">任意</option>
+                      <option value="1">东区图书馆</option>
+                      <option value="2">西区图书馆</option>
+                      <option value="3">第一教学楼</option>
+                      <option value="4">第二教学楼</option>
+                      <option value="5">第五教学楼</option>
+                      <option value="6">第三教学楼</option></select>
+                          </div>
+                        </div>
+                
+                    <div class="form-group">
+                
+                          <!-- Select Basic -->
+                          <label class="control-label col-md-5 ">性别</label>
+                          <div class="col-md-2">
+                            <select name="sex" id="sex"class="form-control">
+                      <option value="0">任意</option>
+                      <option value="1">男</option>
+                      <option value="2">女</option></select>
+                          </div>
+                        </div>
+
+                <!-- 试验 时间选择框 -->
+                <script>
+                  function selectTime()
+                  {
+                    startTime = document.getElementById("startTime").value;
+                    if (startTime != "0"){  
+                      document.getElementById("endTime").className = "form-control";
+                      var endTime = 12 + Number(startTime);
+                      for(var i=1;i<=4;i++)
+                      {
+                        document.getElementById("e"+i).innerHTML = endTime + i + ":00";
+                      }
+                    }
+                    else{
+                      document.getElementById("endTime").className = "combobox hide";
+                    }
+                  }
+                </script>
+
+                    <div class="form-group">
+                
+                          
+                            <!-- Select Basic -->
+                          <label id="test" class="col-md-5 control-label">时间段</label>
+                          <div class="col-md-2">
+                            <select name="startTime" id="startTime" class="form-control" onchange="selectTime()">
+                      <option id="s0" value="0">任意</option>
+                      <option id="s1" value="1">13:00</option>
+                      <option id="s2" value="2">14:00</option>
+                      <option id="s3" value="3">15:00</option>
+                      <option id="s4" value="4">16:00</option></select>
+                           
+                          </div>
+                           <div class="col-md-2">
+                             <select name="endTime" id="endTime"class="combobox hide">
+                        <option id="e0" value="0">任意</option>
+                        <option id="e1" value="1"></option>
+                        <option id="e2" value="2"></option>
+                        <option id="e3" value="3"></option>
+                        <option id="e4" value="4"></option></select>
+                      </div>
+                      
+                    </div>
+
+                    <div class="form-group">
+                
+                          <!-- Select Basic -->
+                          <label class="control-label col-md-5 ">日期</label>
+                            <div class="col-md-2">
+                            <select name="date" id="date"class="form-control">
+                      <option value="0">任意</option></select>
+
+                          </div>
+                        </div>
+                
+                    
+                
+                    </fieldset>
+                  <button type="button" class="btn btn-default pull-right" onclick="history.back()">返回</a></button>
+                  <p class="pull-right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                  <button type="submit" class="btn btn-success pull-right" onclick="alert('尚未完工')">搜索</a></button>
+                </form>
+          <br><br><br>
+        <footer class="text-center">
+          <hr class="divider">
+          <p>&copy; 科气研究所 USTC</p>
+        </footer>
+      </div>
+
+
+    </body>
+       
+       
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>加入可期</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/registered.js"></script> 
+    <style> 
+    </style>
+    <!-- 注意顺序 先引用jquery再引用bootstrap -->
+    </head>
+    <body>
+   
+      <!-- 导航栏 -->
+      <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <div class="navbar-brand">可期</div>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="login.html">首页</a></li>
+              <li><a href="aboutUs.html">关于</a></li>
+              <li><a href="contactUs.html">联系我们</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+      
+      <br><br><br><br><br>
+
+      <div class="container">
+        <div class="row">
+        <div class="col-md-4"></div>
+        <!-- 注册 -->
+        <div class="col-md-4">
+          <div class="input-group">
+            <form id="registeredForm" onsubmit="return goToLoginFromRegistered()" method="post">
+              <fieldset>
+                <legend>加入可期</legend>
+
+                  <div id="emailDiv" class="form-group has-feedback">
+                    <label>邮箱</label>
+                    <input type="text" name="ustcEmail" id="ustcEmail" class="form-control" placeholder="请输入你的科大邮箱" onclick="check_info()" required>
+                    <br><br><br>
+                    <span id="emailIcon" class="hide"></span>
+                    <span id="ustcEmail_warning" class="help-block hide">当前仅允许科大邮箱注册</span>
+                  </div>
+
+                  <div id="passwordDiv" class="form-group has-feedback">
+                    <label>密码</label>
+                    <input type="password" name="password" id="password" class="form-control" placeholder="请输入6-16位字符" onclick="check_info()" required>
+                    <br><br><br>
+                    <span id="passwordIcon" class="hide"></span>
+                    <span id="password_warning" class="help-block hide">密码应为6-16位字符</span>
+                  </div>
+
+                  <div id="confirmDiv" class="form-group has-feedback">
+                    <label>确认密码</label>
+                    <input type="password" name="confirmPassword" id="confirmPassword" class="form-control" placeholder="确认你的密码" onclick="check_info()" required>
+                    <br><br><br>
+                    <span id="confirmIcon" class="hide"></span>
+                    <span id="confirmPassword_warning" class="help-block hide">两次密码应相同</span>
+                  </div>
+
+                  <div id="phoneDiv" class="form-group has-feedback">
+                    <label>手机号码</label>
+                    <input type="text" name="cellphoneNumber" id="cellphoneNumber" class="form-control" placeholder="请输入你的手机号码" onclick="check_info()" required>
+                    <br><br><br>
+                    <span id="phoneIcon" class="hide"></span>
+                    <span id="cellphoneNumber_warning" class="help-block hide">请输入11位手机号码</span>
+                  </div>
+                  
+                  <div class="checkbox">
+                    <label><input type="checkbox" required>我已阅读并同意用户协议</label>
+                  </div>
+                  <button type="submit" class="btn btn-default">注册</button>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+        <div class="col-md-4"></div>
+      </div>
+    </body>
+       
+       
+</html>
