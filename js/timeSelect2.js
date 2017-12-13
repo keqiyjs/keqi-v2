@@ -47,12 +47,7 @@ function checkIfCurrentDate(){
       $('.endTime').datetimepicker("setStartDate",startHour);
       $('.startTime').datetimepicker("setEndDate",endHour);
       $('.endTime').datetimepicker("setEndDate",endHour);
-      laydate.render({
-        elem: '#test1', //指定元素
-        type:'time',
-        format: 'HH:mm',
-        min:currentHour+':00:00'
-      });
+
     }
     else{
       document.getElementById('startTime').value = "任意";
