@@ -116,6 +116,7 @@ $('.startTime').datetimepicker({
 function selectBuilding() {
   myLocation = document.getElementById("location").value;
   if (myLocation == '1') {
+    document.getElementById("building").value = "0";
     document.getElementById("building").className = "form-control ";
     document.getElementById("be1").className = "";
     document.getElementById("be2").className = "";
@@ -126,6 +127,7 @@ function selectBuilding() {
     document.getElementById("bw3").className = "hide";
   }
   else if (myLocation == '2') {
+    document.getElementById("building").value = "0";
     document.getElementById("building").className = "form-control ";
     document.getElementById("be1").className = "hide";
     document.getElementById("be2").className = "hide";
