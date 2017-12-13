@@ -9,7 +9,7 @@
       <meta name="keywords" content="科气研究所，中国科学技术大学，中科大，现代软件工程">
       <meta name="description" content="Page prototype v1.1" />
       <meta name="author" content="USTC Modern Software Engineering KLKQYFCT">
-      <title>搜索自习</title>
+      <title>发布新的自习</title>
       <link href="css/bootstrap.min.css" rel="stylesheet">
       <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
       <script src="js/jquery.min.js"></script>
@@ -63,43 +63,8 @@
             <form class="form-horizontal" role="form">
               <fieldset>
               <div id="legend" class="">
-                <legend class="text-center">搜索自习</legend>
+                <legend class="text-center">发布新的自习</legend>
               </div>
-                      <div class="form-group">
-                          <!-- Select Basic -->
-                          <label class="control-label col-md-5 ">年级</label>
-                          <div class="col-md-2">
-                            <select name="grade" id="grade"class="form-control">
-                      <option value="0">任意</option>
-                      <option value="1">大一</option>
-                      <option value="2">大二</option>
-                      <option value="3">大三</option>
-                      <option value="4">大四</option></select>
-                          </div>
-                        </div>
-                
-                    <div class="form-group">
-                
-                          <!-- Select Basic -->
-                          <label class="control-label col-md-5 ">院系</label>
-                          <div class="col-md-3">
-                            <select name="department" id="department" class="form-control">
-                      <option value="0">任意</option>
-                      <option value="1">物理学院</option>
-                      <option value="2">化学与材料科学学院</option>
-                      <option value="3">少年班学院</option>
-                      <option value="4">管理学院</option>
-                      <option value="5">地球和空间科学学院</option>
-                      <option value="6">人文与社会科学学院</option>
-                      <option value="7">计算机科学与技术学院</option>
-                      <option value="8">信息科学技术学院</option>
-                      <option value="9">工程科学学院</option>
-                      <option value="10">数学科学学院</option>
-                      <option value="11">生命科学学院</option>
-                      <option value="12">公共事务学院</option>
-                      <option value="13">核科学技术学院</option></select>
-                         </div>
-                        </div>
                 
                     <div class="form-group">
                 
@@ -107,13 +72,13 @@
                           <label class="control-label col-md-5 ">地点</label>
                           <div class="col-md-2">
                             <select name="location" id="location" class="form-control" onchange="selectBuilding()">
-                      <option value="0">任意</option>
+                      <option value="0">请选择</option>
                       <option value="1">东区</option>
                       <option value="2">西区</option> </select>
                           </div>
                           <div class="col-md-2">
                               <select name="building" id="building"class="form-control hide">
-                         <option id="b0" value="0">任意</option>
+                         <option id="b0" value="0">请选择</option>
                          <option id="be1" value="1">东区图书馆</option>
                          <option id="be2" value="2">第一教学楼</option>
                          <option id="be3" value="3">第二教学楼</option>
@@ -123,19 +88,7 @@
                          <option id="bw3" value="7">网络自习室</option></select>
                        </div>
 
-                        </div>
-                
-                    <div class="form-group">
-                
-                          <!-- Select Basic -->
-                          <label class="control-label col-md-5 ">性别</label>
-                          <div class="col-md-2">
-                            <select name="sex" id="sex"class="form-control">
-                      <option value="0">任意</option>
-                      <option value="1">男</option>
-                      <option value="2">女</option></select>
-                          </div>
-                        </div>
+                        </div>            
 
                 <div class="form-group">
                 
@@ -144,8 +97,8 @@
                           <div class="col-md-3">
                           <div class="input-group date form_date" data-date="" 
                           data-date-format="yyyy-MM-dd">
-                              <input name="date" id="date" class="form-control" size="16" type="text" value="任意" onchange="checkIfCurrentDate()" readonly>
-                              <span class="input-group-addon"><span onclick="document.getElementById('date').value = '任意';checkIfCurrentDate()" >任意</span></span>  
+                              <input name="date" id="date" class="form-control" size="16" type="text" onchange="checkIfCurrentDate()" value="请选择" readonly>
+                              
                     <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
                           </div>
                         </div>
@@ -160,8 +113,8 @@
                           <div class="col-md-3">
                     <div class="input-group date startTime" data-date="" 
                     data-date-format="hh:ii">
-                        <input name="startTime" id="startTime" class="form-control" size="16" type="text" value="任意" readonly onchange="setStartTime()">
-                        <span class="input-group-addon"><span onclick="document.getElementById('startTime').value = '任意';setStartTime()" >任意</span></span>  
+                        <input name="startTime" id="startTime" class="form-control" size="16" type="text" value="请选择" readonly onchange="setStartTime()">
+                          
               <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
                     </div>
                     </div>
@@ -174,10 +127,8 @@
                       <div class="col-md-3">
                         <fieldset>
                         <div class="input-group date endTime" data-date="" data-date-format="hh:ii">
-                          <input name="endTime" id="endTime" class="form-control" type="text" value="任意" readonly>
-                          <span class="input-group-addon">
-                            <span onclick="document.getElementById('endTime').value = '任意'">任意</span>
-                          </span>
+                          <input name="endTime" id="endTime" class="form-control" type="text" readonly value="请选择">
+
                           <span class="input-group-addon">
                             <span class="glyphicon glyphicon-calendar"></span>
                           </span>
@@ -186,11 +137,11 @@
                       </div>
                     </div>
                     
-
+                
                     </fieldset>
                   <button type="button" class="btn btn-default pull-right" onclick="history.back()">返回</a></button>
                   <p class="pull-right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-                  <button type="submit" class="btn btn-success pull-right" onclick="alert('尚未完工！')">搜索</a></button>
+                  <button type="submit" class="btn btn-success pull-right">提交</a></button>
                 </form>
           <br><br><br>
         <footer class="text-center">
@@ -200,7 +151,7 @@
       </div>
       <script type="text/javascript" src="js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
       <script type="text/javascript" src="js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
-      <script type="text/javascript" src="js/timeSelect.js" charset="UTF-8"></script>
+      <script type="text/javascript" src="js/announceNew.js" charset="UTF-8"></script>
     </body>
        
        

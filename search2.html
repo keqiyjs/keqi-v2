@@ -137,35 +137,30 @@
                           </div>
                         </div>
 
+
                 <div class="form-group">
                 
                           <!-- Select Basic -->
                           <label class="control-label col-md-5 ">日期</label>
                           <div class="col-md-3">
-                          <div class="input-group date form_date" data-date="" 
-                          data-date-format="yyyy-MM-dd">
-                              <input name="date" id="date" class="form-control" size="16" type="text" value="任意" onchange="checkIfCurrentDate()" readonly>
-                              <span class="input-group-addon"><span onclick="document.getElementById('date').value = '任意';checkIfCurrentDate()" >任意</span></span>  
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                              <input type="text" id="date" readonly placeholder="请选择日期" required>
                           </div>
                         </div>
-                      </div>
 
-
-                    <div id="startDiv" class="form-group hide">
-                
-                          
-                            <!-- Select Basic -->
-                          <label class="col-md-5 control-label">开始时间</label>
+ 
+                      <div class="form-group" id="startDiv">
+                          <label class="control-label col-md-5 ">开始时间</label>
                           <div class="col-md-3">
-                    <div class="input-group date startTime" data-date="" 
-                    data-date-format="hh:ii">
-                        <input name="startTime" id="startTime" class="form-control" size="16" type="text" value="任意" readonly onchange="setStartTime()">
-                        <span class="input-group-addon"><span onclick="document.getElementById('startTime').value = '任意';setStartTime()" >任意</span></span>  
-              <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-                    </div>
-                    </div>
-                    </div>
+                            <input type="text" id="startTime" readonly placeholder="请选择开始时间">
+        
+                            <script src="js/laydate.js"></script> <!-- 改成你的路径 -->
+                            <script>
+                            //执行一个laydate实例
+                            
+                            </script>
+                          </div>
+                        </div>
+                  
                     
                 
                     <div id="endDiv" class="form-group hide">
@@ -186,7 +181,7 @@
                       </div>
                     </div>
                     
-
+                    
                     </fieldset>
                   <button type="button" class="btn btn-default pull-right" onclick="history.back()">返回</a></button>
                   <p class="pull-right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
@@ -198,9 +193,9 @@
           <p>&copy; 科气研究所 USTC</p>
         </footer>
       </div>
-      <script type="text/javascript" src="js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+      <script type="text/javascript" src="js/laydate.js" charset="UTF-8"></script>
       <script type="text/javascript" src="js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
-      <script type="text/javascript" src="js/timeSelect.js" charset="UTF-8"></script>
+      <script type="text/javascript" src="js/timeSelect2.js" charset="UTF-8"></script>
     </body>
        
        
